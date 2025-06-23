@@ -95,7 +95,7 @@ export class EcowittAPI {
         mac: string,
         days: number = 7
     ): Promise<EcowittHistory[]> {
-        const endDate = getStartDateNDaysAgo(1); // today
+        const endDate = getStartDateNDaysAgo(0); // today
         const startDate = getStartDateNDaysAgo(days);
         try {
             const response = await this.client.get(`/device/history`, {
